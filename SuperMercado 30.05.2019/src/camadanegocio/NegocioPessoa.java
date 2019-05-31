@@ -5,8 +5,9 @@
  */
 package camadanegocio;
 
-import classesbasicas.Funcionario;
+import camadadados.DadosPessoa;
 import classesbasicas.Cliente;
+import classesbasicas.Funcionario;
 
 /**
  *
@@ -30,7 +31,7 @@ public class NegocioPessoa {
             throw new Exception("Informe o TELEFONE corretamente\n EX:00 0 0000-0000");
         }
         /*DadosPessoa dados = new DadosPessoa();
-        dados.cadastrarFuncionario;*/
+        dados.cadastrarFuncionario(f);*/
 
     }
     
@@ -50,7 +51,7 @@ public class NegocioPessoa {
             throw new Exception("Informe o TELEFONE corretamente\n EX:00 0 0000-0000");
         }
         /*DadosPessoa dados = new DadosPessoa();
-        dados.cadastrarFuncionario;*/
+        dados.cadastrarFuncionario(c);*/
 
     }
 }

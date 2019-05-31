@@ -9,7 +9,6 @@ import camadanegocio.NegocioPessoa;
 import classesbasicas.Cliente;
 import classesbasicas.Funcionario;
 import javax.swing.JOptionPane;
-import javax.swing.JRadioButton;
 
 /**
  *

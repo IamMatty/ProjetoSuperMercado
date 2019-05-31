@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 package camadadados;
-
+//JPA
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import classesbasicas.Fornecedor;
