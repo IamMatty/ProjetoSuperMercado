@@ -15,6 +15,7 @@ public class Produto {
     private int codigo;
     private String nome;
     private Double valor;
+    private int quantidade;
     ArrayList<ItemVenda> itVenda;
     ArrayList<Fornecedor> Fornecedor;
 
@@ -58,6 +59,20 @@ public class Produto {
      */
     public void setValor(Double valor) {
         this.valor = valor;
+    }
+
+    /**
+     * @return the quantidade
+     */
+    public int getQuantidade() {
+        return quantidade;
+    }
+
+    /**
+     * @param quantidade the quantidade to set
+     */
+    public void setQuantidade(int quantidade) {
+        this.quantidade = quantidade;
     }
     
     
