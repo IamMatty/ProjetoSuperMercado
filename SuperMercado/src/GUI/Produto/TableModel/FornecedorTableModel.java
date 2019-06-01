@@ -5,24 +5,24 @@
  */
 package GUI.Produto.TableModel;
 
-import classesbasicas.Produto;
+import classesbasicas.Fornecedor;
 import java.util.ArrayList;
 import javax.swing.table.AbstractTableModel;
 
 /**
  *
- * @author Mateus
+ * @author mateus.franca
  */
-public class ProdutoTableModel extends AbstractTableModel {
+public class FornecedorTableModel extends AbstractTableModel {
 
-    private final java.util.List<Produto> dados = new ArrayList<>();
-    private final String[] colunas = {" Codigo ", " Nome "," Quantidade ", " Valor Unitario"};
+    private final java.util.List<Fornecedor> dados = new ArrayList<>();
+    private final String[] colunas = {" CNPJ ", " Nome ", " Endereço ", " Telefone ", " Email "};
 
     @Override
     public String getColumnName(int column) {
-        return colunas[column];
+        return colunas [column];
     }
-
+    
     @Override
     public int getRowCount() {
         return dados.size();
@@ -35,41 +35,43 @@ public class ProdutoTableModel extends AbstractTableModel {
 
     @Override
     public Object getValueAt(int linha, int coluna) {
-        switch (coluna) {
+      switch (coluna) {
             case 0:
-                return dados.get(linha).getCodigo();
+                return dados.get(linha).getCnpj();
             case 1:
                 return dados.get(linha).getNome();
             case 2:
-                return dados.get(linha).getValor();
+                return dados.get(linha).getEndereco();
             case 3:
-                return dados.get(linha).getQuantidade();
+                return dados.get(linha).getTelefone();
+            case 4:
+                return dados.get(linha).getEmail();
         }
-        return null;
+        return null;  
     }
-
-    @Override
-    public void setValueAt(Object codigo, int linha, int coluna) {
+    
+     @Override
+    public void setValueAt(Object CNPJ, int linha, int coluna) {
         switch (coluna) {
             case 0:
-                 dados.get(linha).setNome((String)codigo);
+                 dados.get(linha).setNome((String)CNPJ);
                  break;
             case 1:
-                 dados.get(linha).setQuantidade(Integer.parseInt((String)codigo));
+                 dados.get(linha).setEndereco((String)CNPJ);
                  break;
             case 2:
-                 dados.get(linha).setValor(Double.parseDouble((String)codigo));
+                 dados.get(linha).setTelefone((String)CNPJ);
+                 break;
+            case 3:
+                 dados.get(linha).setEmail((String)CNPJ);
                  break;
         }
         this.fireTableRowsUpdated(linha, linha);
     }
     
     
-            
-    
-
-    public void addRow(Produto p) {
-        this.dados.add(p);
+    public void addRow(Fornecedor f) {
+        this.dados.add(f);
         this.fireTableDataChanged();
 
     }
@@ -78,6 +80,5 @@ public class ProdutoTableModel extends AbstractTableModel {
         this.dados.remove(linha);
         this.fireTableRowsDeleted(linha, linha);
     }
-    
     
 }
