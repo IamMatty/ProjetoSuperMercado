@@ -4,23 +4,49 @@
  * and open the template in the editor.
  */
 
-package GUI.Fornecedor;
+package GUI;
 
+import GUI.Produto.TableModel.FornecedorTableModel;
+<<<<<<< HEAD:SuperMercado/src/GUI/CadastrarFornecedor.java
+<<<<<<< HEAD:SuperMercado/src/GUI/CadastrarFornecedor.java
+import GUI.Produto.TableModel.ProdutoTableModel;
+=======
+>>>>>>> 191f7f7e14c0a74606d3b488b1e488a30b4a21b6:SuperMercado/src/GUI/Fornecedor/CadastrarFornecedor.java
+=======
+>>>>>>> 191f7f7e14c0a74606d3b488b1e488a30b4a21b6:SuperMercado/src/GUI/Fornecedor/CadastrarFornecedor.java
 import camadanegocio.NegocioFornecedor;
 import classesbasicas.Fornecedor;
 import javax.swing.JOptionPane;
+import javax.swing.table.TableModel;
 
 /**
  *
  * @author mateus.franca
  */
 public class CadastrarFornecedor extends javax.swing.JFrame {
+<<<<<<< HEAD:SuperMercado/src/GUI/CadastrarFornecedor.java
+    FornecedorTableModel tablemodel = new FornecedorTableModel();
+=======
 
+    FornecedorTableModel  tablemodel = new FornecedorTableModel();
+<<<<<<< HEAD:SuperMercado/src/GUI/CadastrarFornecedor.java
+>>>>>>> 191f7f7e14c0a74606d3b488b1e488a30b4a21b6:SuperMercado/src/GUI/Fornecedor/CadastrarFornecedor.java
+=======
+>>>>>>> 191f7f7e14c0a74606d3b488b1e488a30b4a21b6:SuperMercado/src/GUI/Fornecedor/CadastrarFornecedor.java
     /**
      * Creates new form CadastrarFornecedor
      */
     public CadastrarFornecedor() {
         initComponents();
+<<<<<<< HEAD:SuperMercado/src/GUI/CadastrarFornecedor.java
+<<<<<<< HEAD:SuperMercado/src/GUI/CadastrarFornecedor.java
+        jTableFornecedor.setModel(tablemodel);
+=======
+        jTableFornecedor.setModel (tablemodel);
+>>>>>>> 191f7f7e14c0a74606d3b488b1e488a30b4a21b6:SuperMercado/src/GUI/Fornecedor/CadastrarFornecedor.java
+=======
+        jTableFornecedor.setModel (tablemodel);
+>>>>>>> 191f7f7e14c0a74606d3b488b1e488a30b4a21b6:SuperMercado/src/GUI/Fornecedor/CadastrarFornecedor.java
     }
 
     /**
@@ -48,8 +74,9 @@ public class CadastrarFornecedor extends javax.swing.JFrame {
         jTextFieldEma = new javax.swing.JTextField();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
+        jButton4 = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        jTableFornecedor = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -77,7 +104,12 @@ public class CadastrarFornecedor extends javax.swing.JFrame {
 
         jLabel5.setText("Ex: 00 0 0000-0000");
 
-        jButton2.setText("Limpar");
+        jButton2.setText("Remover");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         jButton3.setText("Sair");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
@@ -86,12 +118,19 @@ public class CadastrarFornecedor extends javax.swing.JFrame {
             }
         });
 
+        jButton4.setText("Alterar");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(18, 18, 18)
+                .addGap(14, 14, 14)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -105,11 +144,9 @@ public class CadastrarFornecedor extends javax.swing.JFrame {
                             .addComponent(jLabel6))
                         .addGap(18, 18, 18)))
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jTextFieldNom, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jTextFieldEnd))
-                        .addGap(51, 51, 51))
+                    .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(jTextFieldNom, javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jTextFieldEnd))
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel3Layout.createSequentialGroup()
@@ -121,11 +158,13 @@ public class CadastrarFornecedor extends javax.swing.JFrame {
                                 .addComponent(jTextFieldCNPJ, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
                                 .addComponent(jLabel4)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 134, Short.MAX_VALUE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 83, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(55, 55, 55)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, 130, Short.MAX_VALUE)
                     .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(30, 30, 30))
         );
         jPanel3Layout.setVerticalGroup(
@@ -133,18 +172,40 @@ public class CadastrarFornecedor extends javax.swing.JFrame {
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+<<<<<<< HEAD:SuperMercado/src/GUI/CadastrarFornecedor.java
+<<<<<<< HEAD:SuperMercado/src/GUI/CadastrarFornecedor.java
                     .addComponent(jLabel1)
                     .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jTextFieldCNPJ, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jLabel4)
                         .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(6, 6, 6)
+                .addGap(5, 5, 5)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
                     .addComponent(jTextFieldNom, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+=======
+>>>>>>> 191f7f7e14c0a74606d3b488b1e488a30b4a21b6:SuperMercado/src/GUI/Fornecedor/CadastrarFornecedor.java
+=======
+>>>>>>> 191f7f7e14c0a74606d3b488b1e488a30b4a21b6:SuperMercado/src/GUI/Fornecedor/CadastrarFornecedor.java
                     .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jTextFieldCNPJ, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel4)
+                            .addComponent(jLabel1))
+                        .addGap(16, 16, 16)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel2)
+                            .addComponent(jTextFieldNom, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel3)
@@ -157,15 +218,11 @@ public class CadastrarFornecedor extends javax.swing.JFrame {
                         .addGap(12, 12, 12)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jTextFieldEma, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel7))
-                        .addContainerGap(12, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(16, 16, 16))))
+                            .addComponent(jLabel7))))
+                .addContainerGap(53, Short.MAX_VALUE))
         );
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        jTableFornecedor.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -176,7 +233,7 @@ public class CadastrarFornecedor extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(jTableFornecedor);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -211,8 +268,18 @@ public class CadastrarFornecedor extends javax.swing.JFrame {
             f.setEndereco(jTextFieldEnd.getText());
             f.setTelefone(jTextFieldTelefone.getText());
             f.setEmail(jTextFieldEma.getText());
+            tablemodel.addRow(f);
             NegocioFornecedor negocio = new NegocioFornecedor();
             negocio.cadastrarFornecedor(f);
+<<<<<<< HEAD:SuperMercado/src/GUI/CadastrarFornecedor.java
+<<<<<<< HEAD:SuperMercado/src/GUI/CadastrarFornecedor.java
+            tablemodel.addRow(f);
+=======
+            
+>>>>>>> 191f7f7e14c0a74606d3b488b1e488a30b4a21b6:SuperMercado/src/GUI/Fornecedor/CadastrarFornecedor.java
+=======
+            
+>>>>>>> 191f7f7e14c0a74606d3b488b1e488a30b4a21b6:SuperMercado/src/GUI/Fornecedor/CadastrarFornecedor.java
             JOptionPane.showMessageDialog(this, "Fornecedor Cadastrado com sucesso.");
 
         } catch (Exception e) {
@@ -224,6 +291,25 @@ public class CadastrarFornecedor extends javax.swing.JFrame {
         // TODO add your handling code here:
         this.dispose();
     }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+        if (jTableFornecedor.getSelectedRow() != -1) {
+            tablemodel.removeRow(jTableFornecedor.getSelectedRow());
+            JOptionPane.showMessageDialog(this, "Fornecedor removido com sucesso.");
+            
+        }
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        // TODO add your handling code here:
+        if (jTableFornecedor.getSelectedRow() != -1) {
+            tablemodel.setValueAt(jTextFieldCNPJ.getText(), jTableFornecedor.getSelectedRow(), 0);
+            tablemodel.setValueAt(jTextFieldNom.getText(), jTableFornecedor.getSelectedRow(), 1);
+            tablemodel.setValueAt(jTextFieldTelefone.getText(), jTableFornecedor.getSelectedRow(), 2);
+            tablemodel.setValueAt(jTextFieldEma.getText(), jTableFornecedor.getSelectedRow(), 3);
+        }
+    }//GEN-LAST:event_jButton4ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -264,6 +350,7 @@ public class CadastrarFornecedor extends javax.swing.JFrame {
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -273,7 +360,7 @@ public class CadastrarFornecedor extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
+    private javax.swing.JTable jTableFornecedor;
     private javax.swing.JTextField jTextFieldCNPJ;
     private javax.swing.JTextField jTextFieldEma;
     private javax.swing.JTextField jTextFieldEnd;
