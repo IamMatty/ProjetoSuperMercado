@@ -125,8 +125,6 @@
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="jButton3" min="-2" pref="40" max="-2" attributes="0"/>
                       </Group>
-<<<<<<< HEAD:SuperMercado/src/GUI/CadastrarFornecedor.form
-<<<<<<< HEAD:SuperMercado/src/GUI/CadastrarFornecedor.form
                   </Group>
                   <EmptySpace min="-2" pref="5" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
@@ -135,10 +133,6 @@
                       <Component id="jButton2" alignment="3" min="-2" pref="40" max="-2" attributes="0"/>
                   </Group>
                   <Group type="103" groupAlignment="0" attributes="0">
-=======
->>>>>>> 191f7f7e14c0a74606d3b488b1e488a30b4a21b6:SuperMercado/src/GUI/Fornecedor/CadastrarFornecedor.form
-=======
->>>>>>> 191f7f7e14c0a74606d3b488b1e488a30b4a21b6:SuperMercado/src/GUI/Fornecedor/CadastrarFornecedor.form
                       <Group type="102" attributes="0">
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="jTextFieldCNPJ" alignment="3" min="-2" max="-2" attributes="0"/>

@@ -35,7 +35,6 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-<<<<<<< HEAD
           <Group type="102" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" max="-2" attributes="0">
@@ -43,7 +42,6 @@
                   <Component id="jPanel2" max="32767" attributes="0"/>
               </Group>
               <EmptySpace pref="503" max="32767" attributes="0"/>
-=======
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" max="-2" attributes="0">
@@ -55,23 +53,17 @@
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Component id="jPanel2" min="-2" max="-2" attributes="0"/>
               <EmptySpace pref="93" max="32767" attributes="0"/>
-<<<<<<< HEAD
->>>>>>> 191f7f7e14c0a74606d3b488b1e488a30b4a21b6
-=======
->>>>>>> 191f7f7e14c0a74606d3b488b1e488a30b4a21b6
           </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-<<<<<<< HEAD
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" pref="89" max="-2" attributes="0"/>
               <Component id="jPanel6" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
               <Component id="jPanel2" min="-2" max="-2" attributes="0"/>
               <EmptySpace pref="144" max="32767" attributes="0"/>
-=======
           <Group type="102" alignment="1" attributes="0">
               <EmptySpace pref="88" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="0" max="-2" attributes="0">
@@ -85,17 +77,11 @@
               <EmptySpace max="-2" attributes="0"/>
               <Component id="jPanel5" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="206" max="-2" attributes="0"/>
-<<<<<<< HEAD
->>>>>>> 191f7f7e14c0a74606d3b488b1e488a30b4a21b6
-=======
->>>>>>> 191f7f7e14c0a74606d3b488b1e488a30b4a21b6
           </Group>
       </Group>
     </DimensionLayout>
   </Layout>
   <SubComponents>
-<<<<<<< HEAD
-=======
     <Container class="javax.swing.JPanel" name="jPanel1">
       <Properties>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
@@ -104,7 +90,6 @@
           </Border>
         </Property>
       </Properties>
-
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
@@ -136,7 +121,6 @@
         </Component>
       </SubComponents>
     </Container>
->>>>>>> 191f7f7e14c0a74606d3b488b1e488a30b4a21b6
     <Container class="javax.swing.JPanel" name="jPanel2">
       <Properties>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
@@ -151,21 +135,18 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="5" max="-2" attributes="0"/>
-<<<<<<< HEAD
-<<<<<<< HEAD
                   <Component id="jButton4" min="-2" pref="97" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Component id="jButton5" min="-2" pref="104" max="-2" attributes="0"/>
-=======
                   <Component id="jButton4" pref="113" max="32767" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="jButton5" min="-2" pref="112" max="-2" attributes="0"/>
->>>>>>> 191f7f7e14c0a74606d3b488b1e488a30b4a21b6
-=======
                   <Component id="jButton4" pref="113" max="32767" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="jButton5" min="-2" pref="112" max="-2" attributes="0"/>
->>>>>>> 191f7f7e14c0a74606d3b488b1e488a30b4a21b6
+                  <Component id="jButton4" pref="113" max="32767" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="jButton5" min="-2" pref="112" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
           </Group>
@@ -211,8 +192,6 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-<<<<<<< HEAD
-<<<<<<< HEAD
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
@@ -220,16 +199,16 @@
                       <Component id="jButtonFornecedor" alignment="1" max="32767" attributes="0"/>
                       <Component id="jButtonClienteFuncionario" max="32767" attributes="0"/>
                   </Group>
-=======
               <Group type="102" attributes="0">
                   <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
                   <Component id="jButton6" pref="222" max="32767" attributes="0"/>
->>>>>>> 191f7f7e14c0a74606d3b488b1e488a30b4a21b6
-=======
               <Group type="102" attributes="0">
                   <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
                   <Component id="jButton6" pref="222" max="32767" attributes="0"/>
->>>>>>> 191f7f7e14c0a74606d3b488b1e488a30b4a21b6
+
+              <Group type="102" attributes="0">
+                  <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
+                  <Component id="jButton6" pref="222" max="32767" attributes="0"/>
                   <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
               </Group>
           </Group>
@@ -238,19 +217,14 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
-<<<<<<< HEAD
-<<<<<<< HEAD
                   <Component id="jButtonProduto" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="5" max="-2" attributes="0"/>
                   <Component id="jButtonFornecedor" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="5" max="-2" attributes="0"/>
                   <Component id="jButtonClienteFuncionario" min="-2" max="-2" attributes="0"/>
-=======
                   <Component id="jButton6" min="-2" max="-2" attributes="0"/>
->>>>>>> 191f7f7e14c0a74606d3b488b1e488a30b4a21b6
-=======
                   <Component id="jButton6" min="-2" max="-2" attributes="0"/>
->>>>>>> 191f7f7e14c0a74606d3b488b1e488a30b4a21b6
+                  <Component id="jButton6" min="-2" max="-2" attributes="0"/>
                   <EmptySpace pref="10" max="32767" attributes="0"/>
               </Group>
           </Group>
@@ -265,8 +239,6 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonProdutoActionPerformed"/>
           </Events>
         </Component>
-<<<<<<< HEAD
-<<<<<<< HEAD
         <Component class="javax.swing.JButton" name="jButtonFornecedor">
           <Properties>
             <Property name="text" type="java.lang.String" value="Cadastrar Fornecedor"/>
@@ -283,11 +255,8 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonClienteFuncionarioActionPerformed"/>
           </Events>
         </Component>
-=======
->>>>>>> 191f7f7e14c0a74606d3b488b1e488a30b4a21b6
       </SubComponents>
     </Container>
-=======
       </SubComponents>
     </Container>
     <Container class="javax.swing.JPanel" name="jPanel4">
@@ -367,6 +336,5 @@
         </Component>
       </SubComponents>
     </Container>
->>>>>>> 191f7f7e14c0a74606d3b488b1e488a30b4a21b6
   </SubComponents>
 </Form>

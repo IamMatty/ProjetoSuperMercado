@@ -90,12 +90,10 @@
                           <Component id="jLabel4" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Group type="102" alignment="0" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
-<<<<<<< HEAD:SuperMercado/src/GUI/CadastroProduto.form
                                   <Component id="jTextFieldNome" alignment="0" min="-2" pref="175" max="-2" attributes="0"/>
                                   <Component id="jLabel1" alignment="0" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
-=======
                                   <Component id="jLabel4" alignment="0" min="-2" max="-2" attributes="0"/>
                                   <Group type="102" alignment="0" attributes="0">
                                       <Group type="103" groupAlignment="0" attributes="0">
@@ -118,10 +116,6 @@
                                   </Group>
                               </Group>
                               <EmptySpace pref="84" max="32767" attributes="0"/>
-<<<<<<< HEAD:SuperMercado/src/GUI/CadastroProduto.form
->>>>>>> 191f7f7e14c0a74606d3b488b1e488a30b4a21b6:SuperMercado/src/GUI/Produto/CadastroProduto.form
-=======
->>>>>>> 191f7f7e14c0a74606d3b488b1e488a30b4a21b6:SuperMercado/src/GUI/Produto/CadastroProduto.form
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Component id="jTextFieldQtd" min="-2" pref="51" max="-2" attributes="0"/>
                                   <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
@@ -167,7 +161,6 @@
                                   <Component id="jTextFieldQtd" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="jTextFieldValor" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
-<<<<<<< HEAD:SuperMercado/src/GUI/CadastroProduto.form
                           </Group>
                           <Group type="102" attributes="0">
                               <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
@@ -178,7 +171,6 @@
                                       <Component id="jButton4" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="jLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
-=======
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="1" attributes="0">
                                   <Group type="102" alignment="1" attributes="0">
@@ -188,7 +180,6 @@
                                       </Group>
                                       <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
                                       <Component id="jTextFieldValor" min="-2" max="-2" attributes="0"/>
->>>>>>> 191f7f7e14c0a74606d3b488b1e488a30b4a21b6:SuperMercado/src/GUI/Produto/CadastroProduto.form
                                   </Group>
                                   <Group type="102" alignment="0" attributes="0">
                                       <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>

@@ -7,13 +7,7 @@
 package GUI;
 
 import GUI.Produto.TableModel.FornecedorTableModel;
-<<<<<<< HEAD:SuperMercado/src/GUI/CadastrarFornecedor.java
-<<<<<<< HEAD:SuperMercado/src/GUI/CadastrarFornecedor.java
 import GUI.Produto.TableModel.ProdutoTableModel;
-=======
->>>>>>> 191f7f7e14c0a74606d3b488b1e488a30b4a21b6:SuperMercado/src/GUI/Fornecedor/CadastrarFornecedor.java
-=======
->>>>>>> 191f7f7e14c0a74606d3b488b1e488a30b4a21b6:SuperMercado/src/GUI/Fornecedor/CadastrarFornecedor.java
 import camadanegocio.NegocioFornecedor;
 import classesbasicas.Fornecedor;
 import javax.swing.JOptionPane;
@@ -24,29 +18,16 @@ import javax.swing.table.TableModel;
  * @author mateus.franca
  */
 public class CadastrarFornecedor extends javax.swing.JFrame {
-<<<<<<< HEAD:SuperMercado/src/GUI/CadastrarFornecedor.java
     FornecedorTableModel tablemodel = new FornecedorTableModel();
-=======
-
     FornecedorTableModel  tablemodel = new FornecedorTableModel();
-<<<<<<< HEAD:SuperMercado/src/GUI/CadastrarFornecedor.java
->>>>>>> 191f7f7e14c0a74606d3b488b1e488a30b4a21b6:SuperMercado/src/GUI/Fornecedor/CadastrarFornecedor.java
-=======
->>>>>>> 191f7f7e14c0a74606d3b488b1e488a30b4a21b6:SuperMercado/src/GUI/Fornecedor/CadastrarFornecedor.java
     /**
      * Creates new form CadastrarFornecedor
      */
     public CadastrarFornecedor() {
         initComponents();
-<<<<<<< HEAD:SuperMercado/src/GUI/CadastrarFornecedor.java
-<<<<<<< HEAD:SuperMercado/src/GUI/CadastrarFornecedor.java
         jTableFornecedor.setModel(tablemodel);
-=======
         jTableFornecedor.setModel (tablemodel);
->>>>>>> 191f7f7e14c0a74606d3b488b1e488a30b4a21b6:SuperMercado/src/GUI/Fornecedor/CadastrarFornecedor.java
-=======
-        jTableFornecedor.setModel (tablemodel);
->>>>>>> 191f7f7e14c0a74606d3b488b1e488a30b4a21b6:SuperMercado/src/GUI/Fornecedor/CadastrarFornecedor.java
+
     }
 
     /**
@@ -172,8 +153,6 @@ public class CadastrarFornecedor extends javax.swing.JFrame {
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-<<<<<<< HEAD:SuperMercado/src/GUI/CadastrarFornecedor.java
-<<<<<<< HEAD:SuperMercado/src/GUI/CadastrarFornecedor.java
                     .addComponent(jLabel1)
                     .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jTextFieldCNPJ, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -185,10 +164,6 @@ public class CadastrarFornecedor extends javax.swing.JFrame {
                     .addComponent(jTextFieldNom, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-=======
->>>>>>> 191f7f7e14c0a74606d3b488b1e488a30b4a21b6:SuperMercado/src/GUI/Fornecedor/CadastrarFornecedor.java
-=======
->>>>>>> 191f7f7e14c0a74606d3b488b1e488a30b4a21b6:SuperMercado/src/GUI/Fornecedor/CadastrarFornecedor.java
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -271,15 +246,7 @@ public class CadastrarFornecedor extends javax.swing.JFrame {
             tablemodel.addRow(f);
             NegocioFornecedor negocio = new NegocioFornecedor();
             negocio.cadastrarFornecedor(f);
-<<<<<<< HEAD:SuperMercado/src/GUI/CadastrarFornecedor.java
-<<<<<<< HEAD:SuperMercado/src/GUI/CadastrarFornecedor.java
             tablemodel.addRow(f);
-=======
-            
->>>>>>> 191f7f7e14c0a74606d3b488b1e488a30b4a21b6:SuperMercado/src/GUI/Fornecedor/CadastrarFornecedor.java
-=======
-            
->>>>>>> 191f7f7e14c0a74606d3b488b1e488a30b4a21b6:SuperMercado/src/GUI/Fornecedor/CadastrarFornecedor.java
             JOptionPane.showMessageDialog(this, "Fornecedor Cadastrado com sucesso.");
 
         } catch (Exception e) {

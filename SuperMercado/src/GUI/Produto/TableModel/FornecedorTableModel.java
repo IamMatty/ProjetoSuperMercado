@@ -11,7 +11,6 @@ import javax.swing.table.AbstractTableModel;
 
 /**
  *
-
  * @author Mateus
  */
 public class FornecedorTableModel extends AbstractTableModel{
@@ -49,15 +48,11 @@ public class FornecedorTableModel extends AbstractTableModel {
 
     @Override
     public Object getValueAt(int linha, int coluna) {
-<<<<<<< HEAD
-<<<<<<< HEAD
+
         switch (coluna) {
-=======
       switch (coluna) {
->>>>>>> 191f7f7e14c0a74606d3b488b1e488a30b4a21b6
-=======
       switch (coluna) {
->>>>>>> 191f7f7e14c0a74606d3b488b1e488a30b4a21b6
+      switch (coluna) {
             case 0:
                 return dados.get(linha).getCnpj();
             case 1:
@@ -65,8 +60,6 @@ public class FornecedorTableModel extends AbstractTableModel {
             case 2:
                 return dados.get(linha).getEndereco();
             case 3:
-<<<<<<< HEAD
-<<<<<<< HEAD
                 return dados.get(linha).getEmail();
             case 4:
                 return dados.get(linha).getTelefone();
@@ -95,9 +88,6 @@ public class FornecedorTableModel extends AbstractTableModel {
             /*case 5:
                  dados.get(linha).setSexo((String)cnpj);
                  break;*/
-=======
-=======
->>>>>>> 191f7f7e14c0a74606d3b488b1e488a30b4a21b6
                 return dados.get(linha).getTelefone();
             case 4:
                 return dados.get(linha).getEmail();
@@ -120,28 +110,17 @@ public class FornecedorTableModel extends AbstractTableModel {
             case 3:
                  dados.get(linha).setEmail((String)CNPJ);
                  break;
-<<<<<<< HEAD
->>>>>>> 191f7f7e14c0a74606d3b488b1e488a30b4a21b6
-=======
->>>>>>> 191f7f7e14c0a74606d3b488b1e488a30b4a21b6
         }
         this.fireTableRowsUpdated(linha, linha);
     }
-    
-    
-<<<<<<< HEAD
-<<<<<<< HEAD
-
     public void addRow(Fornecedor p) {
         this.dados.add(p);
-=======
     public void addRow(Fornecedor f) {
         this.dados.add(f);
->>>>>>> 191f7f7e14c0a74606d3b488b1e488a30b4a21b6
-=======
     public void addRow(Fornecedor f) {
         this.dados.add(f);
->>>>>>> 191f7f7e14c0a74606d3b488b1e488a30b4a21b6
+    public void addRow(Fornecedor f) {
+        this.dados.add(f);
         this.fireTableDataChanged();
 
     }
@@ -150,12 +129,4 @@ public class FornecedorTableModel extends AbstractTableModel {
         this.dados.remove(linha);
         this.fireTableRowsDeleted(linha, linha);
     }
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-    
->>>>>>> 191f7f7e14c0a74606d3b488b1e488a30b4a21b6
-=======
-    
->>>>>>> 191f7f7e14c0a74606d3b488b1e488a30b4a21b6
 }
