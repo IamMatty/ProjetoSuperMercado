@@ -3,9 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package GUI.Produto.TableModel;
+package GUI.TableModel;
 
-import classesbasicas.Funcionario;
+import classesbasicas.Produto;
 import java.util.ArrayList;
 import javax.swing.table.AbstractTableModel;
 
@@ -13,10 +13,10 @@ import javax.swing.table.AbstractTableModel;
  *
  * @author Mateus
  */
-public class FuncionarioTableModel extends AbstractTableModel{
-    
-    private final java.util.List<Funcionario> dados = new ArrayList<>();
-    private final String[] colunas = {" Codigo ", " Nome "," CPF "," Endereço ", " Telefone ", "Sexo" };
+public class ProdutoTableModel extends AbstractTableModel {
+
+    private final java.util.List<Produto> dados = new ArrayList<>();
+    private final String[] colunas = {" Codigo ", " Nome "," Quantidade ", " Valor Unitario"};
 
     @Override
     public String getColumnName(int column) {
@@ -41,43 +41,34 @@ public class FuncionarioTableModel extends AbstractTableModel{
             case 1:
                 return dados.get(linha).getNome();
             case 2:
-                return dados.get(linha).getEndereco();
+                return dados.get(linha).getValor();
             case 3:
-                return dados.get(linha).getEmail();
-            case 4:
-                return dados.get(linha).getTelefone();
-            /*case 5:
-                return dados.get(linha).getSexo();*/
-           
+                return dados.get(linha).getQuantidade();
         }
         return null;
     }
 
     @Override
-    public void setValueAt(Object cnpj, int linha, int coluna) {
+    public void setValueAt(Object codigo, int linha, int coluna) {
         switch (coluna) {
             case 0:
-                 dados.get(linha).setNome((String) cnpj);
+                 dados.get(linha).setNome((String)codigo);
+                 break;
+            case 1:
+                 dados.get(linha).setQuantidade(Integer.parseInt((String)codigo));
                  break;
             case 2:
-                 dados.get(linha).setEndereco((String)cnpj);
+                 dados.get(linha).setValor(Double.parseDouble((String)codigo));
                  break;
-            case 3:
-                 dados.get(linha).setEmail((String)cnpj);
-                 break;
-            case 4:
-                 dados.get(linha).setTelefone((String)cnpj);
-                 break;
-            /*case 5:
-                 dados.get(linha).setSexo((String)cnpj);
-                 break;*/
         }
         this.fireTableRowsUpdated(linha, linha);
     }
     
     
+            
     
-    public void addRow(Funcionario p) {
+
+    public void addRow(Produto p) {
         this.dados.add(p);
         this.fireTableDataChanged();
 
@@ -87,4 +78,6 @@ public class FuncionarioTableModel extends AbstractTableModel{
         this.dados.remove(linha);
         this.fireTableRowsDeleted(linha, linha);
     }
+    
+    
 }

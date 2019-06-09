@@ -5,10 +5,10 @@
  */
 package GUI;
 
-import GUI.Produto.TableModel.ProdutoTableModel;
+import GUI.TableModel.ProdutoTableModel;
 import camadanegocio.NegocioProduto;
-import classesbasicas.Produto;
 import javax.swing.JOptionPane;
+import classesbasicas.Produto;
 
 /**
  *

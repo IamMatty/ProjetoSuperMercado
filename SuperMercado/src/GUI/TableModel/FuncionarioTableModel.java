@@ -3,9 +3,8 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package GUI.Produto.TableModel;
+package GUI.TableModel;
 
-import classesbasicas.Cliente;
 import classesbasicas.Funcionario;
 import java.util.ArrayList;
 import javax.swing.table.AbstractTableModel;
@@ -14,9 +13,9 @@ import javax.swing.table.AbstractTableModel;
  *
  * @author Mateus
  */
-public class ClienteTableModel extends AbstractTableModel{
+public class FuncionarioTableModel extends AbstractTableModel{
     
-    private final java.util.List<Cliente> dados = new ArrayList<>();
+    private final java.util.List<Funcionario> dados = new ArrayList<>();
     private final String[] colunas = {" Codigo ", " Nome "," CPF "," Endereço ", " Telefone ", "Sexo" };
 
     @Override
@@ -78,7 +77,7 @@ public class ClienteTableModel extends AbstractTableModel{
     
     
     
-    public void addRow(Cliente p) {
+    public void addRow(Funcionario p) {
         this.dados.add(p);
         this.fireTableDataChanged();
 

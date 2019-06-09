@@ -5,7 +5,8 @@
  */
 package GUI;
 
-import GUI.Produto.TableModel.ProdutoTableModel;
+import GUI.TableModel.ClienteTableModel;
+import GUI.TableModel.FuncionarioTableModel;
 import camadanegocio.NegocioPessoa;
 import classesbasicas.Cliente;
 import classesbasicas.Funcionario;
@@ -17,14 +18,15 @@ import javax.swing.JOptionPane;
  */
 public class CadastroPessoa extends javax.swing.JFrame {
 
-    ProdutoTableModel tablemodelPessoa = new ProdutoTableModel();
+    FuncionarioTableModel tablemodelFuncionario = new FuncionarioTableModel();
+    ClienteTableModel tablemodelCliente = new ClienteTableModel();
     /**
      * Creates new form CadastroPessoa
      */
     public CadastroPessoa() {
         initComponents();
-        jTableCliente.setModel(tablemodelPessoa);
-        jTableFuncionario.setModel(tablemodelPessoa);
+        jTableCliente.setModel(tablemodelCliente);
+        jTableFuncionario.setModel(tablemodelFuncionario);
     }
 
     /**
@@ -385,7 +387,7 @@ public class CadastroPessoa extends javax.swing.JFrame {
             f.setTelefone(jTextFieldTelFuncionario.getText());
             NegocioPessoa negocio = new NegocioPessoa();
             negocio.cadastrarFuncionario(f);
-            tablemodelPessoa.addRow(f);
+            tablemodelFuncionario.addRow(f);
             JOptionPane.showMessageDialog(this, "Funcionario Cadastrado com sucesso.");
 
         } catch (Exception e) {
@@ -404,7 +406,7 @@ public class CadastroPessoa extends javax.swing.JFrame {
         p.setTelefone(jTextFieldTelCliente.getText());
         NegocioPessoa negocio = new NegocioPessoa();
         negocio.cadastrarCliente(p);
-        tablemodelPessoa.addRow(p);
+        tablemodelCliente.addRow(p);
         JOptionPane.showMessageDialog(this, "Cliente Cadastrado com sucesso.");
         }catch (Exception e){
             JOptionPane.showMessageDialog(this, e.getMessage());
