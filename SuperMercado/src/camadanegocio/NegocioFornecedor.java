@@ -53,8 +53,4 @@ public class NegocioFornecedor {
             throw new Exception("Informe o EMAIL.");
         }
     }
-
-    public void listarFornecedor(Fornecedor f) throws Exception {
-
-    }
 }

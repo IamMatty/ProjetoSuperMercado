@@ -16,9 +16,7 @@ import java.sql.SQLException;
 public class Conexao {
 
     private Connection conn;
-    //constantes com os valores para os drivers de conexão
     private final String DRIVER_MYSQL = "com.mysql.jdbc.Driver";
-    //constantes com os valores para os parâmetros de conexão
     private final String LOCAL_SERVIDOR = "localhost";
     private final String BANCO_DE_DADOS = "supermercado";
     private final String PORTA_BANCO = "3306";

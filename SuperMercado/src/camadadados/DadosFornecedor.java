@@ -9,6 +9,9 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import classesbasicas.Fornecedor;
 import conexao.Conexao;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.util.List;
 
 /**
  *
@@ -50,5 +53,4 @@ public class DadosFornecedor extends Conexao {
         preparedStatement.executeUpdate();
         super.desconectar();
     }
-
-}
+    }

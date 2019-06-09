@@ -16,7 +16,7 @@ import javax.swing.table.AbstractTableModel;
 public class FuncionarioTableModel extends AbstractTableModel{
     
     private final java.util.List<Funcionario> dados = new ArrayList<>();
-    private final String[] colunas = {" Codigo ", " Nome "," CPF "," Endereço ", " Telefone ", "Sexo" };
+    private final String[] colunas = {" Codigo ", " Nome "," Endereço "," CPF ", " Telefone ", "Sexo" };
 
     @Override
     public String getColumnName(int column) {

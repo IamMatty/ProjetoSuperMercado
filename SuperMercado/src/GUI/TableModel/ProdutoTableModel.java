@@ -16,7 +16,7 @@ import javax.swing.table.AbstractTableModel;
 public class ProdutoTableModel extends AbstractTableModel {
 
     private final java.util.List<Produto> dados = new ArrayList<>();
-    private final String[] colunas = {" Codigo ", " Nome "," Quantidade ", " Valor Unitario"};
+    private final String[] colunas = {" Codigo ", " Nome ", " Valor Unitario ", " Quantidade "};
 
     @Override
     public String getColumnName(int column) {
@@ -52,21 +52,17 @@ public class ProdutoTableModel extends AbstractTableModel {
     public void setValueAt(Object codigo, int linha, int coluna) {
         switch (coluna) {
             case 0:
-                 dados.get(linha).setNome((String)codigo);
-                 break;
+                dados.get(linha).setNome((String) codigo);
+                break;
             case 1:
-                 dados.get(linha).setQuantidade(Integer.parseInt((String)codigo));
-                 break;
+                dados.get(linha).setQuantidade(Integer.parseInt((String) codigo));
+                break;
             case 2:
-                 dados.get(linha).setValor(Double.parseDouble((String)codigo));
-                 break;
+                dados.get(linha).setValor(Double.parseDouble((String) codigo));
+                break;
         }
         this.fireTableRowsUpdated(linha, linha);
     }
-    
-    
-            
-    
 
     public void addRow(Produto p) {
         this.dados.add(p);
@@ -78,6 +74,5 @@ public class ProdutoTableModel extends AbstractTableModel {
         this.dados.remove(linha);
         this.fireTableRowsDeleted(linha, linha);
     }
-    
-    
+
 }
