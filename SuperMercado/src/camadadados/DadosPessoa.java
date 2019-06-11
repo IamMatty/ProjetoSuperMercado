@@ -12,7 +12,7 @@ import java.sql.SQLException;
 
 public class DadosPessoa extends Conexao {
 
-    public void cadastrarFuncionario(Funcionario f) throws SQLException, Exception {
+   /* public void cadastrarFuncionario(Funcionario f) throws SQLException, Exception {
         String sql = " INSERT INTO produto (NOME_FUN, CPF_FUN, ENDERECO_FUN, TELEFONE_FUN, SEXO_FUN) ";
         sql += " VALUES (?,?,?,?) ";
         PreparedStatement preparedStatement = super.conectar().prepareStatement(sql);
@@ -76,6 +76,6 @@ public class DadosPessoa extends Conexao {
          preparedStatement.executeUpdate();
          super.desconectar();
 
-         }*/
+         }
+}*/
     }
-}

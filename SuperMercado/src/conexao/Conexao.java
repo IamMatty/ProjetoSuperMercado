@@ -5,36 +5,73 @@
  */
 package conexao;
 
+import camadadados.DadosProduto;
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
- * @author professor
+ * @author Mateus
  */
 public class Conexao {
 
-    private Connection conn;
-    private final String DRIVER_MYSQL = "com.mysql.jdbc.Driver";
-    private final String LOCAL_SERVIDOR = "localhost";
-    private final String BANCO_DE_DADOS = "supermercado";
-    private final String PORTA_BANCO = "3306";
-    private final String USUARIO = "root";
-    private final String SENHA = "";
+    private static final String DRIVER = "com.mysql.jdbc.Driver";
+    private static final String URL = "jdbc:mysql://localhost:3306/dbmercadinho";
+    private static final String USER = "root";
+    private static final String PASS = "";
 
-    public Connection conectar() throws Exception {
-        return this.conectarMySql();
+    public static Connection getConnection() {
+        try {
+            Class.forName(DRIVER);
+            return DriverManager.getConnection(URL, USER, PASS);
+        } catch (ClassNotFoundException | SQLException ex) {
+            throw new RuntimeException("Erro na conexão: ", ex);
+        }
     }
 
-    public void desconectar() throws SQLException {
-        conn.close();
+    public static void closeConnection(Connection con) {
+        try {
+            if (con != null) {
+                con.close();
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(DadosProduto.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
-    private Connection conectarMySql() throws Exception {
-        Class.forName(DRIVER_MYSQL).newInstance();
-        String url = "jdbc:mysql://" + LOCAL_SERVIDOR + ":" + PORTA_BANCO + "/" + BANCO_DE_DADOS;
-        conn = (Connection) DriverManager.getConnection(url, USUARIO, SENHA);
-        return conn;
+    public static void closeConnection(Connection con, PreparedStatement stmt) {
+
+        closeConnection(con);
+
+        try {
+
+            if (stmt != null) {
+                stmt.close();
+            }
+
+        } catch (SQLException ex) {
+            Logger.getLogger(DadosProduto.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
+
+    public static void closeConnection(Connection con, PreparedStatement stmt, ResultSet rs) {
+
+        closeConnection(con, stmt);
+
+        try {
+
+            if (rs != null) {
+                rs.close();
+            }
+
+        } catch (SQLException ex) {
+            Logger.getLogger(DadosProduto.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
 }

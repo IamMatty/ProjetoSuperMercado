@@ -6,24 +6,49 @@
 package GUI;
 
 import GUI.TableModel.ProdutoTableModel;
-import camadanegocio.NegocioProduto;
+import camadadados.DadosProduto;
 import classesbasicas.Produto;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableRowSorter;
 
 /**
  *
  * @author Mateus
  */
-public class CadastroProduto extends javax.swing.JFrame {
+public final class CadastroProduto extends javax.swing.JFrame {
 
     ProdutoTableModel tablemodel = new ProdutoTableModel();
 
     /**
-     * Creates new form CadastroProduto1
+     * Creates new form CadastroProduto
      */
     public CadastroProduto() {
         initComponents();
-        jTableProdutos.setModel(tablemodel);
+        DefaultTableModel modelo = (DefaultTableModel) jTableProdutos.getModel();
+        jTableProdutos.setRowSorter(new TableRowSorter(modelo));
+
+        ListarProdutos();
+            
+    }
+
+    public void ListarProdutos() {
+
+        DefaultTableModel modelo = (DefaultTableModel) jTableProdutos.getModel();
+        modelo.setNumRows(0);
+        DadosProduto dados = new DadosProduto();
+
+        for (Produto p : dados.ListarProduto()) {
+
+            modelo.addRow(new Object[]{
+                p.getCodigo(),
+                p.getNome(),
+                p.getQuantidade(),
+                p.getValor()
+            });
+
+        }
+
     }
 
     /**
@@ -39,8 +64,6 @@ public class CadastroProduto extends javax.swing.JFrame {
         jButtonCadastro = new javax.swing.JButton();
         jTextFieldNome = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
-        jTextFieldCodigo = new javax.swing.JTextField();
-        jLabel2 = new javax.swing.JLabel();
         jTextFieldValor = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
@@ -48,6 +71,8 @@ public class CadastroProduto extends javax.swing.JFrame {
         jButtonRemover = new javax.swing.JButton();
         jButtonAlterar = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
+        jComboBoxFornecedor = new javax.swing.JComboBox<>();
+        jLabel5 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTableProdutos = new javax.swing.JTable();
@@ -62,8 +87,6 @@ public class CadastroProduto extends javax.swing.JFrame {
         });
 
         jLabel1.setText("Nome");
-
-        jLabel2.setText("Codigo:");
 
         jLabel3.setText("Valor");
 
@@ -90,6 +113,10 @@ public class CadastroProduto extends javax.swing.JFrame {
             }
         });
 
+        jComboBoxFornecedor.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+
+        jLabel5.setText("Fornecedor");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -97,9 +124,6 @@ public class CadastroProduto extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addComponent(jTextFieldCodigo, javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addComponent(jLabel1)
                     .addComponent(jTextFieldNome, javax.swing.GroupLayout.PREFERRED_SIZE, 311, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -109,8 +133,12 @@ public class CadastroProduto extends javax.swing.JFrame {
                         .addGap(39, 39, 39)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jTextFieldQtd))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 152, Short.MAX_VALUE)
+                            .addComponent(jTextFieldQtd))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 29, Short.MAX_VALUE)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jComboBoxFornecedor, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel5))))
+                .addGap(80, 80, 80)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jButtonCadastro, javax.swing.GroupLayout.DEFAULT_SIZE, 99, Short.MAX_VALUE)
                     .addComponent(jButtonRemover, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -121,50 +149,52 @@ public class CadastroProduto extends javax.swing.JFrame {
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addContainerGap()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(9, 9, 9)
-                        .addComponent(jLabel2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextFieldCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(8, 8, 8)
-                        .addComponent(jLabel1))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap()
                         .addComponent(jButtonCadastro)
                         .addGap(5, 5, 5)
-                        .addComponent(jButtonRemover)))
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jButtonRemover)
+                        .addGap(9, 9, 9)
+                        .addComponent(jButtonAlterar))
                     .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jTextFieldNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel3)
-                            .addComponent(jLabel4))
+                            .addComponent(jLabel4)
+                            .addComponent(jLabel5))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jTextFieldValor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextFieldQtd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(5, 5, 5)
-                        .addComponent(jButtonAlterar)
-                        .addGap(5, 5, 5)
-                        .addComponent(jButton1)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(jTextFieldQtd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jComboBoxFornecedor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGap(5, 5, 5)
+                .addComponent(jButton1)
+                .addContainerGap(16, Short.MAX_VALUE))
         );
 
         jTableProdutos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "Codigo", "Nome", "Valor", "Quantidade", "Fornecedor"
             }
-        ));
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
         jScrollPane1.setViewportView(jTableProdutos);
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
@@ -205,27 +235,40 @@ public class CadastroProduto extends javax.swing.JFrame {
 
     private void jButtonCadastroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCadastroActionPerformed
         // TODO add your handling code here:
-        try {
-            Produto p = new Produto();
-            p.setCodigo(Integer.parseInt(jTextFieldCodigo.getText()));
-            p.setNome(jTextFieldNome.getText());
-            p.setValor(Double.parseDouble(jTextFieldValor.getText()));
-            p.setQuantidade(Integer.parseInt(jTextFieldQtd.getText()));
-            NegocioProduto negocio = new NegocioProduto();
-            negocio.cadastrarProduto(p);
-            tablemodel.addRow(p);
-            JOptionPane.showMessageDialog(this, "Produto cadastrado com sucesso.");
+        Produto p = new Produto();
+        DadosProduto dados = new DadosProduto();
 
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(this, e.getMessage());
-        }
+        p.setNome(jTextFieldNome.getText());
+        p.setQuantidade(Integer.parseInt(jTextFieldQtd.getText()));
+        p.setValor(Double.parseDouble(jTextFieldValor.getText()));
+        dados.CadastrarProduto(p);
+
+        jTextFieldNome.setText("");
+        jTextFieldQtd.setText("");
+        jTextFieldValor.setText("");
+
+        ListarProdutos();
     }//GEN-LAST:event_jButtonCadastroActionPerformed
 
     private void jButtonRemoverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonRemoverActionPerformed
         // TODO add your handling code here:
         if (jTableProdutos.getSelectedRow() != -1) {
-            tablemodel.removeRow(jTableProdutos.getSelectedRow());
-            JOptionPane.showMessageDialog(this, "Produto removido com sucesso.");
+
+            Produto p = new Produto();
+            DadosProduto dados = new DadosProduto();
+
+            p.setCodigo((int) jTableProdutos.getValueAt(jTableProdutos.getSelectedRow(), 0));
+            
+            dados.RemoverProduto(p);
+
+            jTextFieldNome.setText("");
+            jTextFieldQtd.setText("");
+            jTextFieldValor.setText("");
+
+            ListarProdutos();
+
+        } else {
+            JOptionPane.showMessageDialog(null, "Selecione um produto para excluir.");
         }
     }//GEN-LAST:event_jButtonRemoverActionPerformed
 
@@ -284,15 +327,15 @@ public class CadastroProduto extends javax.swing.JFrame {
     private javax.swing.JButton jButtonAlterar;
     private javax.swing.JButton jButtonCadastro;
     private javax.swing.JButton jButtonRemover;
+    private javax.swing.JComboBox<String> jComboBoxFornecedor;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTableProdutos;
-    private javax.swing.JTextField jTextFieldCodigo;
     private javax.swing.JTextField jTextFieldNome;
     private javax.swing.JTextField jTextFieldQtd;
     private javax.swing.JTextField jTextFieldValor;

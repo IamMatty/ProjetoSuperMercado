@@ -19,7 +19,7 @@ import java.util.List;
  */
 public class DadosFornecedor extends Conexao {
 
-    public void cadastrarFornecedor(Fornecedor f) throws SQLException, Exception {
+  /*  public void cadastrarFornecedor(Fornecedor f) throws SQLException, Exception {
         String sql = " INSERT INTO fornecedor (CNPJ_FOR, NOME_FOR, TELEFONE_FOR, EMAIL_FOR, ENDERECO_FOR) ";
         sql += " VALUES (?,?,?,?,?) ";
         PreparedStatement preparedStatement = super.conectar().prepareStatement(sql);
@@ -52,5 +52,5 @@ public class DadosFornecedor extends Conexao {
         preparedStatement.setString(5, f.getEndereco());
         preparedStatement.executeUpdate();
         super.desconectar();
-    }
+    }*/
     }
