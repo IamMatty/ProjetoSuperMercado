@@ -56,6 +56,11 @@ public class PDV extends javax.swing.JFrame {
         });
 
         jButtonFuncionario.setText("Funcionario");
+        jButtonFuncionario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonFuncionarioActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -104,6 +109,12 @@ public class PDV extends javax.swing.JFrame {
         CadastroCliente CadastroCliente = new CadastroCliente();
         CadastroCliente.setVisible(true);
     }//GEN-LAST:event_jButtonClienteActionPerformed
+
+    private void jButtonFuncionarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonFuncionarioActionPerformed
+        // TODO add your handling code here:
+        CadastroFuncionario CadastroFuncionario = new CadastroFuncionario();
+        CadastroFuncionario.setVisible(true);
+    }//GEN-LAST:event_jButtonFuncionarioActionPerformed
 
     /**
      * @param args the command line arguments
