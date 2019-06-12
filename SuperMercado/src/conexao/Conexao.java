@@ -21,7 +21,7 @@ import java.util.logging.Logger;
 public class Conexao {
 
     private static final String DRIVER = "com.mysql.jdbc.Driver";
-    private static final String URL = "jdbc:mysql://localhost:3306/dbmercadinho";
+    private static final String URL = "jdbc:mysql://localhost:3306/supermercado";
     private static final String USER = "root";
     private static final String PASS = "";
 
@@ -72,6 +72,10 @@ public class Conexao {
         } catch (SQLException ex) {
             Logger.getLogger(DadosProduto.class.getName()).log(Level.SEVERE, null, ex);
         }
+    }
+
+    public Object conectar() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
 }

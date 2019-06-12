@@ -86,7 +86,9 @@ public class DadosProduto extends Conexao {
             stmt.setString(1, p.getNome());
             stmt.setDouble(2, p.getValor());
             stmt.setInt(3, p.getQuantidade());
+            
             stmt.executeUpdate();
+            
             JOptionPane.showMessageDialog(null, "Produto Cadastrado com sucesso.");
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null, ex.getMessage());
@@ -111,9 +113,11 @@ public class DadosProduto extends Conexao {
             while (rs.next()) {
 
                 Produto produto = new Produto();
+                
                 produto.setNome(rs.getString("Nom_Produto"));
                 produto.setQuantidade(rs.getInt("Qtd_Produto"));
                 produto.setValor(rs.getDouble("Val_Produto"));
+                
                 produtos.add(produto);
             }
 

@@ -7,11 +7,10 @@
 package GUI;
 
 import GUI.TableModel.FornecedorTableModel;
-import GUI.TableModel.ProdutoTableModel;
+import camadadados.DadosFornecedor;
 import camadanegocio.NegocioFornecedor;
 import classesbasicas.Fornecedor;
 import javax.swing.JOptionPane;
-import javax.swing.table.TableModel;
 
 /**
  *
@@ -133,14 +132,10 @@ public class CadastrarFornecedor extends javax.swing.JFrame {
                         .addGap(63, 63, 63))
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addComponent(jLabel3)
-                                .addGap(18, 18, 18))
-                            .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel6)
-                                    .addComponent(jLabel7))
-                                .addGap(23, 23, 23)))
+                            .addComponent(jLabel3)
+                            .addComponent(jLabel6)
+                            .addComponent(jLabel7))
+                        .addGap(18, 18, 18)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel3Layout.createSequentialGroup()
                                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -149,10 +144,9 @@ public class CadastrarFornecedor extends javax.swing.JFrame {
                                         .addComponent(jTextFieldTelefone, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                         .addComponent(jLabel5)))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addComponent(jTextFieldEndereco)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))))
+                                .addGap(0, 0, Short.MAX_VALUE))
+                            .addComponent(jTextFieldEndereco))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addComponent(jLabel1)
                         .addGap(39, 39, 39)
@@ -222,7 +216,7 @@ public class CadastrarFornecedor extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(15, 15, 15)
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(87, Short.MAX_VALUE))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         pack();
@@ -232,6 +226,7 @@ public class CadastrarFornecedor extends javax.swing.JFrame {
         // TODO add your handling code here:
         try {
             Fornecedor f = new Fornecedor();
+            DadosFornecedor dados = new DadosFornecedor();
             f.setCnpj(jTextFieldCnpj.getText());
             f.setNome(jTextFieldNome.getText());
             f.setEndereco(jTextFieldEndereco.getText());
@@ -240,6 +235,7 @@ public class CadastrarFornecedor extends javax.swing.JFrame {
             NegocioFornecedor negocio = new NegocioFornecedor();
             negocio.cadastrarFornecedor(f);
             tablemodelFornecedor.addRow(f);
+            dados.CadastrarFornecedor(f);
             JOptionPane.showMessageDialog(this, "Fornecedor Cadastrado com sucesso.");
 
         } catch (Exception e) {

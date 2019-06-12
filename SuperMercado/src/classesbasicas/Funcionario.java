@@ -117,4 +117,8 @@ public class Funcionario {
     public void setSexo(String sexo) {
         this.sexo = sexo;
     }
+
+    public String getCdCargo() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }

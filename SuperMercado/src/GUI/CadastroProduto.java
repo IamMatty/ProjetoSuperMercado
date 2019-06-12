@@ -6,9 +6,11 @@
 package GUI;
 
 import GUI.TableModel.ProdutoTableModel;
+import camadadados.DadosProduto;
 import camadanegocio.NegocioProduto;
 import classesbasicas.Produto;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -26,6 +28,25 @@ public class CadastroProduto extends javax.swing.JFrame {
         jTableProdutos.setModel(tablemodel);
     }
 
+    public void ListarProduto() {
+
+        DefaultTableModel modelo = (DefaultTableModel) jTableProdutos.getModel();
+        modelo.setNumRows(0);
+        DadosProduto dados = new DadosProduto();
+
+        for (Produto p : dados.ListarProduto()) {
+
+            modelo.addRow(new Object[]{
+                p.getCodigo(),
+                p.getNome(),
+                p.getValor(),
+                p.getQuantidade()
+            });
+
+        }
+
+    }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -39,8 +60,6 @@ public class CadastroProduto extends javax.swing.JFrame {
         jButtonCadastro = new javax.swing.JButton();
         jTextFieldNome = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
-        jTextFieldCodigo = new javax.swing.JTextField();
-        jLabel2 = new javax.swing.JLabel();
         jTextFieldValor = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
@@ -62,8 +81,6 @@ public class CadastroProduto extends javax.swing.JFrame {
         });
 
         jLabel1.setText("Nome");
-
-        jLabel2.setText("Codigo:");
 
         jLabel3.setText("Valor");
 
@@ -97,9 +114,6 @@ public class CadastroProduto extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addComponent(jTextFieldCodigo, javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addComponent(jLabel1)
                     .addComponent(jTextFieldNome, javax.swing.GroupLayout.PREFERRED_SIZE, 311, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -123,11 +137,7 @@ public class CadastroProduto extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(9, 9, 9)
-                        .addComponent(jLabel2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextFieldCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(8, 8, 8)
+                        .addGap(63, 63, 63)
                         .addComponent(jLabel1))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addContainerGap()
@@ -205,15 +215,17 @@ public class CadastroProduto extends javax.swing.JFrame {
 
     private void jButtonCadastroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCadastroActionPerformed
         // TODO add your handling code here:
+        DadosProduto dados = new DadosProduto();
         try {
             Produto p = new Produto();
-            p.setCodigo(Integer.parseInt(jTextFieldCodigo.getText()));
             p.setNome(jTextFieldNome.getText());
             p.setValor(Double.parseDouble(jTextFieldValor.getText()));
             p.setQuantidade(Integer.parseInt(jTextFieldQtd.getText()));
             NegocioProduto negocio = new NegocioProduto();
             negocio.cadastrarProduto(p);
             tablemodel.addRow(p);
+            dados.CadastrarProduto(p);
+            ListarProduto();
             JOptionPane.showMessageDialog(this, "Produto cadastrado com sucesso.");
 
         } catch (Exception e) {
@@ -285,14 +297,12 @@ public class CadastroProduto extends javax.swing.JFrame {
     private javax.swing.JButton jButtonCadastro;
     private javax.swing.JButton jButtonRemover;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTableProdutos;
-    private javax.swing.JTextField jTextFieldCodigo;
     private javax.swing.JTextField jTextFieldNome;
     private javax.swing.JTextField jTextFieldQtd;
     private javax.swing.JTextField jTextFieldValor;
